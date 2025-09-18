@@ -3,14 +3,14 @@ package org.folio.security.integration.keycloak.service;
 import static org.apache.commons.lang3.StringUtils.isBlank;
 
 import lombok.RequiredArgsConstructor;
-import org.folio.tools.store.properties.SecureStoreProperties;
+import org.folio.tools.store.properties.KeycloakSecureStoreProperties;
 
 @RequiredArgsConstructor
 public class SecureStoreKeyProvider {
 
   public static final String GLOBAL_SECTION = "master";
 
-  private final SecureStoreProperties secureStoreProperties;
+  private final KeycloakSecureStoreProperties secureStoreProperties;
 
   public String globalStoreKey(String clientId) {
     return tenantStoreKey(GLOBAL_SECTION, clientId);

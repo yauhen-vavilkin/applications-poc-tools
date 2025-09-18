@@ -8,7 +8,7 @@ import org.folio.tools.store.impl.VaultStore;
 import org.folio.tools.store.properties.AwsProperties;
 import org.folio.tools.store.properties.EphemeralProperties;
 import org.folio.tools.store.properties.FsspProperties;
-import org.folio.tools.store.properties.SecureStoreProperties;
+import org.folio.tools.store.properties.KeycloakSecureStoreProperties;
 import org.folio.tools.store.properties.VaultProperties;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -20,8 +20,8 @@ public class SecureStoreAutoconfiguration {
 
   @Bean
   @ConfigurationProperties(prefix = "application.secret-store")
-  public SecureStoreProperties secureStoreProperties() {
-    return new SecureStoreProperties();
+  public KeycloakSecureStoreProperties secureStoreProperties() {
+    return new KeycloakSecureStoreProperties();
   }
 
   @Bean

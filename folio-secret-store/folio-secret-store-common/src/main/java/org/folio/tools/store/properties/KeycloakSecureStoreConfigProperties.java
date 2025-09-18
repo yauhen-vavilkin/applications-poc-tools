@@ -9,6 +9,6 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class SecureStoreConfigProperties {
+public class KeycloakSecureStoreConfigProperties {
   private String environment;
 }

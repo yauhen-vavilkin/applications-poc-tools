@@ -9,7 +9,7 @@ import org.springframework.validation.annotation.Validated;
 @Data
 @EqualsAndHashCode(callSuper = true)
 @Validated
-public class SecureStoreProperties extends SecureStoreConfigProperties {
+public class KeycloakSecureStoreProperties extends KeycloakSecureStoreConfigProperties {
 
   /**
    * First segment of the secure store key, for example "prod" or "test".

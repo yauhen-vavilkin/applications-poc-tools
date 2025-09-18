@@ -7,7 +7,7 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 import org.folio.test.types.UnitTest;
-import org.folio.tools.store.properties.SecureStoreProperties;
+import org.folio.tools.store.properties.KeycloakSecureStoreProperties;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.NullAndEmptySource;
@@ -62,14 +62,14 @@ class SecureStoreKeyProviderTest {
   }
 
   private static String globalStoreKey(String clientId) {
-    var secureStoreProperties = mock(SecureStoreProperties.class);
+    var secureStoreProperties = mock(KeycloakSecureStoreProperties.class);
     when(secureStoreProperties.getEnvironment()).thenReturn(TEST_ENV);
     var keycloakStoreKeyProvider = new SecureStoreKeyProvider(secureStoreProperties);
     return keycloakStoreKeyProvider.globalStoreKey(clientId);
   }
 
   private static String tenantStoreKey(String tenant, String clientId) {
-    var secureStoreProperties = mock(SecureStoreProperties.class);
+    var secureStoreProperties = mock(KeycloakSecureStoreProperties.class);
     when(secureStoreProperties.getEnvironment()).thenReturn(TEST_ENV);
     var keycloakStoreKeyProvider = new SecureStoreKeyProvider(secureStoreProperties);
     return keycloakStoreKeyProvider.tenantStoreKey(tenant, clientId);
