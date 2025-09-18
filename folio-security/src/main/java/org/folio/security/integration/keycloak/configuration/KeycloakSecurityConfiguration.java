@@ -17,7 +17,7 @@ import org.folio.security.integration.keycloak.service.KeycloakPublicKeyProvider
 import org.folio.security.integration.keycloak.service.SecureStoreKeyProvider;
 import org.folio.security.service.InternalModuleDescriptorProvider;
 import org.folio.security.service.RoutingEntryMatcher;
-import org.folio.tools.store.properties.KeycloakSecureStoreProperties;
+import org.folio.tools.store.properties.SecureStoreProperties;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
@@ -37,7 +37,7 @@ public class KeycloakSecurityConfiguration {
   private final KeycloakProperties properties;
 
   @Bean
-  public SecureStoreKeyProvider storeKeyProvider(KeycloakSecureStoreProperties secureStoreProperties) {
+  public SecureStoreKeyProvider storeKeyProvider(SecureStoreProperties secureStoreProperties) {
     return new SecureStoreKeyProvider(secureStoreProperties);
   }
 
